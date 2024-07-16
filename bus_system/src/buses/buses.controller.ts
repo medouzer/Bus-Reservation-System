@@ -2,8 +2,8 @@ import { Controller, Post, Get, Param, UseGuards } from '@nestjs/common';
 import { Body } from '@nestjs/common';
 import { BusesService } from './buses.service';
 import { CreateBusDto } from './dto/create-bus.dto';
-import { RolesGuard } from '../guards/roles.guard';
-import { Roles } from '../decorators/roles.decorator';
+import { RolesGuard } from '../../guards/roles.guard';
+import { Roles } from '../../decorators/roles.decorator';
 import { AuthGuard } from '@nestjs/passport';
 
 
