@@ -1,4 +1,4 @@
-**# School Bus Reservation System**
+**School Bus Reservation System**
 
 The School Bus Reservation System is a web application designed to manage student bus reservations in real-time. The backend is built with NestJS and MongoDB, all running within Docker containers.
 
