@@ -1,4 +1,4 @@
-#School Bus Reservation System
+**School Bus Reservation System**
 The School Bus Reservation System is a web application designed to manage student bus reservations in real-time. The backend is built with NestJS and MongoDB, all running within Docker containers.
 
 Table of Contents
@@ -12,7 +12,7 @@ Table of Contents
 - [Authorization](#authorization)
 - [Scheduling](#scheduling)
 
-##Features
+**#Features**
 Real-time bus reservation management for students.
 Admin capabilities to manage buses, stations, schedules, and drivers.
 Driver interface to view the number of reservations.
@@ -21,14 +21,14 @@ Dockerized application for easy deployment and scalability.
 Authorization using CASL to manage access control for students, drivers, and admins.
 Automated reservation cleanup using node-cron.
 
-##Technologies Used
+**#Technologies Used**
 Backend: NestJS
 Database: MongoDB
 Containerization: Docker, Docker Compose
 Authorization: CASL
 Scheduling: node-cron
 
-##Architecture
+#Architecture
 The architecture of the School Bus Reservation System is designed to ensure scalability, maintainability, and performance. Below is a high-level overview of the system architecture:
 
 Components
@@ -38,7 +38,7 @@ Components
 
 The Lucidchart diagram provides a visual representation of the interaction between these components.
 
-##Getting Started
+#Getting Started
 Prerequisites
 - Docker
 - Docker Compose
@@ -77,10 +77,10 @@ Clear Docker system:
 make clear
 ```
 
-##Usage
+#Usage
 Once the application is running, you can access the API endpoints as per the API documentation. Admins can manage buses, stations, schedules, and drivers, while students can make or cancel reservations. Drivers can view the number of reservations for each bus.
 
-##Environment Variables
+#Environment Variables
 Ensure you have the necessary environment variables set up in a .env file for your application to work correctly. Typical variables include:
 ```
 MONGO_URI=mongodb://mongo:27017/schoolBusDB
@@ -94,8 +94,8 @@ The application includes Swagger for API documentation. Once the application is 
 http://localhost:3000/api
 ```
 
-##Authorization
+#Authorization
 The application uses CASL for managing access control to resources. Different roles (students, drivers, and admins) have different levels of access to the system's resources.
 
-##Scheduling
+#Scheduling
 The application uses node-cron to automatically delete reservations 15 minutes after the departure time to avoid any potential issues.
