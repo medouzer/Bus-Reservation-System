@@ -1,0 +1,55 @@
+services:
+    backend:
+        container_name: backend
+        image: backend
+        build:
+            context: backend
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        env_file:
+            - .env
+        networks:
+            - busNetwork
+        volumes:
+            - backend:/app
+            - /app/node_modules
+        depends_on:
+            - mongo
+        environment:
+            # Server config
+            PORT: ${PORT}
+            
+            # Database config
+            MONGO_URI: ${MONGO_URI}
+            
+            # JWT config
+            JWT_SECRET: ${JWT_SECRET}
+
+            # Admin user to seed
+            ADMIN_USER: ${ADMIN_USER}
+            ADMIN_MAIL: ${ADMIN_MAIL}
+            ADMIN_PASS: ${ADMIN_PASS}
+        
+        command: sh -c "npm run seed && npm run start:dev"
+
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports:
+            - "27017:27017"
+        networks:
+            - busNetwork
+
+networks:
+    busNetwork:
+        driver: bridge
+
+volumes:
+    backend:
+        name: backend
+        driver: local
+        driver_opts:
+            type: none
+            o: bind
+            device: ./backend
