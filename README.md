@@ -41,38 +41,39 @@ Docker Compose
 Installation
 Clone the repository:
 
-bash
-Copy code
+```bash
 git clone https://github.com/yourusername/school-bus-reservation-system.git
 cd school-bus-reservation-system
+```
 Start the application:
 
 Use the provided Makefile to control the Docker containers.
 
-bash
-Copy code
+```bash
 make up
+```
 Stop the application:
 
-bash
-Copy code
+```bash
 make down
+```
 Stop and remove containers:
 
-bash
-Copy code
+```bash
 make stop
 make remove
+```
 Check the status of containers:
 
-bash
-Copy code
+```bash
 make status
+```
 Clear Docker system:
 
-bash
-Copy code
+
+```bash
 make clear
+```
 Usage
 Once the application is running, you can access the API endpoints as per the API documentation. Admins can manage buses, stations, schedules, and drivers, while students can make or cancel reservations. Drivers can view the number of reservations for each bus.
 
@@ -80,16 +81,17 @@ Environment Variables
 Ensure you have the necessary environment variables set up in a .env file for your application to work correctly. Typical variables include:
 
 plaintext
-Copy code
+```
 MONGO_URI=mongodb://mongo:27017/schoolBusDB
 PORT=3000
 JWT_SECRET=your_jwt_secret
+```
 API Documentation
 The application includes Swagger for API documentation. Once the application is running, you can access the documentation at:
 
-bash
-Copy code
+```bash
 http://localhost:3000/api
+```
 Authorization
 The application uses CASL for managing access control to resources. Different roles (students, drivers, and admins) have different levels of access to the system's resources.
 
