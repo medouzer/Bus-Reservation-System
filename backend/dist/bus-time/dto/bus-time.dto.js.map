@@ -1,1 +1,0 @@
-{"version":3,"file":"bus-time.dto.js","sourceRoot":"","sources":["../../../src/bus-time/dto/bus-time.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAA8C;AAE9C,MAAa,UAAU;CAQtB;AARD,gCAQC;AADG;IANC,IAAA,qBAAW,EAAC;QACT,WAAW,EAAE,iBAAiB;QAC9B,IAAI,EAAE,MAAM;QACZ,OAAO,EAAE,OAAO;QAChB,QAAQ,EAAE,IAAI;KACjB,CAAC;;wCACW;AAGjB,MAAa,kBAAkB;CAQ9B;AARD,gDAQC"}
