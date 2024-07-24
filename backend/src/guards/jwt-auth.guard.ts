@@ -20,6 +20,10 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
             const request = context.switchToHttp().getRequest();
             const user = request.user;
             request.user = await this.userService.findOneByid(user.userId)
+            if (!request.user) {
+                console.log("Can Activate : > ", request.user);
+                return false;
+            }
             console.log("Can Activate : > ", request.user);
         }
         return canActivate as boolean;

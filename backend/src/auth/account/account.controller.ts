@@ -23,6 +23,7 @@ export class AccountController {
     async login(@Body() bodyData: SigninDto, @Res() res: any) {
         const jwtToken : string = await this.AccountService.login(bodyData);
         res.cookie('user_token', jwtToken, { httpOnly: true });
+
         res.send({ jwt: jwtToken });
     }
 

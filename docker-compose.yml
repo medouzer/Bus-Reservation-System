@@ -19,6 +19,7 @@ services:
         environment:
             # Server config
             PORT: ${PORT}
+            HOST: ${HOST}
             
             # Database config
             MONGO_URI: ${MONGO_URI}

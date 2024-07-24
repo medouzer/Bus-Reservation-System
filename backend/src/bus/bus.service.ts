@@ -5,6 +5,8 @@ import * as mongoose from 'mongoose';
 import { Bus, BusDocument } from 'src/schemas/bus.schema';
 import { StationService } from 'src/station/station.service';
 import { addStationToBusDto, createBusDto, updateBusDto } from './dto/create.bus.dto';
+import { HttpException, HttpStatus } from '@nestjs/common';
+
 
 @Injectable()
 export class BusService {
@@ -25,13 +27,23 @@ export class BusService {
     }
 
     async create( createBusDto: createBusDto ): Promise<Bus> {
-        const createdBus = new this.BusModel({
-            busName: createBusDto.busName,
-            busNumber: createBusDto.busNumber,
-            stations: [],
-            Capacity: 10,
-        });
-        return await createdBus.save();
+        try {
+            const createdBus = new this.BusModel({
+                busName: createBusDto.busName,
+                busNumber: createBusDto.busNumber,
+                stations: [],
+                Capacity: 10,
+            });
+            return await createdBus.save();
+        } catch (error) {
+            throw new HttpException(
+                {
+                    statusCode: HttpStatus.UNAUTHORIZED,
+                    message: "Error creating bus",
+                },
+                HttpStatus.UNAUTHORIZED
+            );
+        }
     }
     
     async addNewStationToBus(data : addStationToBusDto): Promise<Bus> {
